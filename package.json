@@ -1,0 +1,26 @@
+{
+  "name": "simple-greeting",
+  "private": false,
+  "version": "0.0.1",
+  "main": "dist/simple-greeting.mjs",
+  "exports": {
+    ".": "./dist/simple-greeting.mjs"
+  },
+  "types": "types/simple-greeting.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lit": "^2.7.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9"
+  }
+}
