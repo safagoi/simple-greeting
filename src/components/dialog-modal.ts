@@ -4,10 +4,10 @@ import { customElement, property, state } from "lit/decorators.js";
 @customElement("dialog-modal")
 export class DialogModal extends LitElement {
 
-    @property({type: String})
+    @property({ type: String })
     public header: string;
 
-    @property({type: String})
+    @property({ type: String })
     public body: string;
 
     @state()
@@ -31,12 +31,12 @@ export class DialogModal extends LitElement {
 
     // Función de renderizado
     render() {
-        if (this._open) {    
+        if (this._open) {
             return html`
                 <div class="backdrop">
                     <div class="dialog-modal-content">
                         <div class="dialog-modal-header">
-                            ${this.header}
+                            <h2>${this.header}</h2>
                         </div>
                         <div class="dialog-modal-body">
                             ${this.body}
@@ -48,11 +48,11 @@ export class DialogModal extends LitElement {
                     </div>
                 </div>
             `;
-        }        
+        }
     }
 
-        // Define scoped styles para el component en CSS plano
-        static styles = css`
+    // Define scoped styles para el component en CSS plano
+    static styles = css`
         .backdrop {
             position: fixed;
             top: 0;
@@ -70,7 +70,8 @@ export class DialogModal extends LitElement {
             border: 1px solid red;
             padding: 1rem;
             display: grid;
-            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-rows: 3rem auto 2rem;
+            gap: 1rem 0;
             border-radius: 5px;
             background-color: white;
         }
@@ -78,7 +79,14 @@ export class DialogModal extends LitElement {
         .dialog-modal-footer {
             display: flex;
             justify-content: end;
+            align-items: flex-end;
             gap: 0.5rem;
         }
     `;
+}
+
+declare global {
+    interface HTMLElementTagNameMap {
+      "dialog-modal": DialogModal;
+    }
 }
