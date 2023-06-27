@@ -7,10 +7,11 @@ export class SimpleGreeting extends LitElement {
     // Define scoped styles para el component en CSS plano
     static styles = css`
         :host {
+            display: inline;
             color: green;
-
         }
-        :host button {
+
+        button {
             padding: 0.5rem;
         }
     `;

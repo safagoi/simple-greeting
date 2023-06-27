@@ -3,11 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Greeting - Lit Component</title>
+    <title>Lit Components</title>
+
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/simple-greeting.ts"></script>
+
+    <script type="module" src="/src/components/simple-greeting.ts"></script>
+    <script type="module" src="/src/components/dialog-modal.ts"></script>
   </head>
   <body>
+    <!-- Simple Greeting -->
+    <h2>Componente SimpleGreeting</h2>
     <simple-greeting name="Jaime"></simple-greeting>
+    
+    <!-- Dialog Modal -->
+    <h2>Component DialogModal</h2>
+    <button id="open-modal-btn">Open modal</button>
+    <dialog-modal 
+      header="This is the header"
+      body="This is the body"
+    >
+    </dialog-modal>
+
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
